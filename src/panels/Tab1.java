@@ -17,6 +17,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.awt.event.ActionEvent;
 import javax.swing.JTable;
+import javax.swing.JTabbedPane;
 
 public class Tab1 extends JPanel {
 	private JTable table;
@@ -33,7 +34,7 @@ public class Tab1 extends JPanel {
 				cl.show(mainPanel, "2");
 			}
 		});
-		switchButton.setBounds(25, 34, 115, 29);
+		switchButton.setBounds(0, 0, 115, 29);
 		add(switchButton);
 		
 		JButton refreshButton = new JButton("Refresh");
@@ -42,7 +43,7 @@ public class Tab1 extends JPanel {
 				selectAll(con);
 			}
 		});
-		refreshButton.setBounds(204, 34, 115, 29);
+		refreshButton.setBounds(130, 0, 115, 29);
 		add(refreshButton);
 		
 		table = new JTable();
@@ -52,9 +53,6 @@ public class Tab1 extends JPanel {
 	}
 	
 	private void selectAll(Connection con) {
-		int     nid;
-		String     name;
-		String     major;
 		Statement  stmt;
 		ResultSet  rs = null;
 		   
